@@ -1,128 +1,93 @@
 # Food Delivery Platform Performance Analysis
 
-## Project Overview
+## About This Project
 
-This project analyzes food delivery platform performance using Microsoft Excel.
+I built this project in Excel to analyze the performance of a food delivery platform using data from 2024 and 2025.
 
-The main goal was to take raw food delivery business data, perform data quality checks, analyze important business metrics, and build a dashboard that can help understand sales, orders, delivery performance, customer satisfaction, promotions, and location-level performance.
+I started with the raw dataset and worked through the analysis step by step. First, I checked the data and created a few validation checks. Then I used Power Query, PivotTables, formulas, and charts to look at sales, orders, cities, delivery performance, promotions, customer satisfaction, weekends, and festivals.
 
-The project follows a practical Data Analyst workflow:
-
-**Raw Data → Data Quality Check → Analysis → Dashboard → Insights → Recommendations**
+The final part of the project was creating a dashboard and turning the analysis into some business observations and recommendations.
 
 ---
 
-## Business Problem
+## What I Wanted to Find
 
-A food delivery platform generates a large amount of business data, but raw data alone does not show where the business is performing well or where improvements are needed.
+While working on the project, I mainly wanted to answer questions like:
 
-This analysis focuses on questions such as:
-
-* How are orders and sales changing over time?
-* Is the business growing year over year?
-* Which cities generate the most orders and sales?
-* How well are deliveries performing?
-* Do promotional and non-promotional orders differ in value?
-* What is the relationship between customer ratings and satisfaction?
-* How does business performance differ between weekdays and weekends?
-* How much business comes from festival periods?
-* What areas could be considered for future improvement?
-
----
-
-## Project Objective
-
-The main objective of this project is to analyze food delivery platform performance and identify opportunities to improve:
-
-* Sales growth
-* Order performance
-* Delivery operations
-* Customer experience
-* Promotional effectiveness
-* Location-level performance
-
-The project also demonstrates how Excel can be used to follow a complete Data Analyst workflow from raw data to business recommendations.
+* Is the business growing from 2024 to 2025?
+* Which cities are doing better?
+* Which restaurants, cuisines, and categories perform well?
+* Are deliveries usually early, on time, or late?
+* Do promotions actually make a noticeable difference?
+* What happens to customer satisfaction at different ratings?
+* How much business comes from weekends?
+* How much business comes from festivals?
 
 ---
 
 ## Dataset
 
-The dataset contains food delivery business data for **2024 and 2025**.
+The dataset contains food delivery records for **2024 and 2025**.
 
-The data includes information related to:
+Some of the main columns are:
 
-* Date and time period
-* Restaurants
-* Cities
-* Cuisine types
-* Restaurant categories
+* Date
+* Restaurant
+* City
+* Cuisine Type
+* Category
 * Weather
-* Customer ratings
-* Customer satisfaction
+* Rating
+* Customer Satisfaction
 * Orders
 * Sales
 * Commission
 * Net Sales
-* Delivery times
-* Promotions
-* Weekends
-* Festivals
-* Packaging charges
+* Delivery Time
+* Promotion
+* Weekend
+* Festival
 
-### Cities included
+The cities included are:
 
-* Bangalore
-* Chennai
-* Delhi
-* Hyderabad
-* Mumbai
-* Pune
+**Bangalore, Chennai, Delhi, Hyderabad, Mumbai, and Pune.**
 
 ---
 
-## Tools Used
+## Tools I Used
 
-* **Microsoft Excel**
-* **Power Query**
-* **PivotTables**
-* **PivotCharts**
-* **Excel formulas**
-* **Data quality checks**
-* **Dashboard creation**
+* Microsoft Excel
+* Power Query
+* PivotTables
+* PivotCharts
+* Excel formulas
 
 ---
 
 ## Data Quality Checks
 
-Before starting the analysis, the data was checked for consistency and validity.
+Before starting the main analysis, I checked whether the data was consistent enough to use.
 
-The checks included:
+Some of the checks I performed were:
 
-* Date range validation
-* City validation
-* Numeric field validation
-* Binary field validation
-* Delivery time validation
-* Delivery delay calculation
-* Net Sales consistency
-* Commission consistency
-* Promotion indicators
-* Weekend indicators
-* Festival indicators
-* Packaging charge indicators
-* 24x7 indicators
-
-### Important checks
+* Checked the date range
+* Checked numeric columns
+* Checked the 0/1 fields
+* Checked delivery times
+* Calculated delivery delay
+* Checked Net Sales
+* Checked Commission
+* Checked promotion, weekend, and festival fields
 
 The dataset covers:
 
 **01-Jan-2024 to 31-Dec-2025**
 
-Net Sales was validated using:
+I also checked Net Sales using:
 
-**Net Sales = Sales − Commission**
+**Net Sales = Sales - Commission**
 
-The overall totals were:
+The overall totals I got were:
 
 | KPI              |          Value |
 | ---------------- | -------------: |
@@ -131,17 +96,25 @@ The overall totals were:
 | Total Commission | ₹1,778,007,160 |
 | Total Net Sales  | ₹7,778,562,143 |
 
-Delivery delay was calculated using:
+For delivery performance, I created:
 
-**Delivery Delay = Delivery Time Actual − Delivery Time Minimum**
+**Delivery Delay = Delivery Time Actual - Delivery Time Minimum**
 
-The observed delivery delay values ranged approximately from **-5 to +5 minutes**.
+The delay values were roughly between **-5 and +5 minutes**.
+
+I also created a delivery status column to classify records as:
+
+* Early
+* On Time
+* Late
+
+One thing I noticed was that `Is_Peak_Hour` contained only `0`, so there wasn't enough variation to make a useful peak-hour comparison.
 
 ---
 
-## Analysis Performed
+## Analysis I Performed
 
-The analysis covered the following areas:
+I looked at the data from different angles:
 
 1. Overall Business Performance
 2. Year-over-Year Performance
@@ -160,184 +133,147 @@ The analysis covered the following areas:
 
 ## Dashboard
 
-An Excel dashboard was created to provide a quick view of the main business KPIs and performance trends.
+After completing the analysis, I created an Excel dashboard with the main KPIs and charts.
 
-### KPI Cards
+### KPIs
 
 * Total Orders
 * Total Sales
 * Total Commission
 * Total Net Sales
 
-### Dashboard Charts
+### Charts
 
 * Monthly Sales Trend — 2024 vs 2025
 * Sales by City
 * Delivery Performance
-* Sales: Promo vs Non-Promo
+* Promo vs Non-Promo Performance
 * Orders by Customer Rating
 
-The dashboard was designed to make the analysis easier to understand without having to review every individual PivotTable.
+The idea was to keep the dashboard simple enough that someone could look at it and understand the main business numbers quickly.
 
 ---
 
-## Key Findings
+## Some Findings From My Analysis
 
-### 1. Year-over-Year Growth
+### Business Growth
 
-The business showed positive growth from 2024 to 2025.
+When I compared 2024 with 2025:
 
 * Orders increased by approximately **7.04%**
 * Sales increased by approximately **7.06%**
 
-This indicates overall growth in both order volume and sales.
+So the business was growing in both orders and sales.
 
-### 2. City Performance
+### City Performance
 
-**Mumbai generated the highest sales**, at approximately **₹1.68 billion**.
+Mumbai had the highest sales at approximately **₹1.68 billion**.
 
-**Bangalore recorded the highest order volume**, with approximately **6.72 million orders**.
+Bangalore had the highest number of orders at approximately **6.72 million**.
 
-This shows that order volume and revenue contribution vary across cities.
+This was one of the interesting things I found because the city with the highest orders was not the city with the highest sales.
 
-### 3. Delivery Performance
+### Delivery Performance
 
 The average delivery delay was approximately **0 minutes**.
 
-The observed delay values ranged from approximately **-5 to +5 minutes**.
+The delay values were roughly between **-5 and +5 minutes**, so the actual delivery time was generally close to the expected delivery time in this dataset.
 
-This indicates that actual delivery times generally stayed close to the expected delivery time in the available data.
+### Promotion Performance
 
-### 4. Promotion Performance
+I compared promotional and non-promotional orders.
 
-Sales per Order was approximately:
+Average Sales per Order:
 
-* **Non-Promo:** ₹297.76
-* **Promo:** ₹297.55
+* Non-Promo: **₹297.76**
+* Promo: **₹297.55**
 
-Net Sales per Order was approximately:
+Average Net Sales per Order:
 
-* **Non-Promo:** ₹242.34
-* **Promo:** ₹242.21
+* Non-Promo: **₹242.34**
+* Promo: **₹242.21**
 
-The difference between promotional and non-promotional orders was very small in terms of average order value.
+The difference was very small.
 
-However, promotion effectiveness cannot be fully determined because promotion costs and complete discount information were not available.
+So from the data I had, I couldn't see a major difference in average order value between promo and non-promo orders.
 
-### 5. Customer Performance
+But I would **not** say that promotions are useless. The dataset doesn't contain enough information about discount costs and incremental customers to properly calculate promotion ROI.
 
-Records with a **4.7 rating** had an average customer satisfaction score of approximately **0.610**.
+### Customer Satisfaction
 
-Records with a **3.8 rating** had an average customer satisfaction score of approximately **0.556**.
+For the records with a **4.7 rating**, the average customer satisfaction was approximately **0.610**.
 
-Higher-rated records showed higher average satisfaction, but higher ratings did not automatically correspond to higher sales or order volume.
+For the records with a **3.8 rating**, it was approximately **0.556**.
 
-### 6. Weekend Performance
+Higher-rated records had higher average satisfaction, but that didn't automatically mean they had higher sales or more orders.
 
-Weekdays generated:
+### Weekend Performance
 
-* **23.01 million orders**
-* **₹6.85 billion sales**
+Weekdays:
 
-Weekends generated:
+* Orders: **23,005,799**
+* Sales: **₹6,849,528,311**
 
-* **9.09 million orders**
-* **₹2.71 billion sales**
+Weekends:
 
-Weekend activity represented approximately **28.3% of total orders and sales**.
+* Orders: **9,093,636**
+* Sales: **₹2,707,484,526**
 
-### 7. Festival Performance
+So most of the business activity happened during weekdays.
 
-Non-festival periods generated:
+### Festival Performance
 
-* **30.71 million orders**
-* **₹9.14 billion sales**
+Non-festival periods:
 
-Festival periods generated:
+* Orders: **30,709,104**
+* Sales: **₹9,143,082,625**
 
-* **1.39 million orders**
-* **₹413.93 million sales**
+Festival periods:
 
-Festival activity represented approximately **4.3% of total orders and sales**.
+* Orders: **1,390,331**
+* Sales: **₹413,930,212**
 
----
-
-## Business Recommendations
-
-Based on the analysis, the following recommendations can be considered:
-
-### Focus on High-Performing Cities
-
-Mumbai generated the highest sales while Bangalore generated the highest order volume.
-
-Different cities can be approached with different strategies depending on whether the goal is revenue growth or order-volume growth.
-
-### Maintain Delivery Reliability
-
-Delivery performance was close to the expected delivery time in the available data.
-
-The business should continue monitoring delivery performance as order volume grows.
-
-### Evaluate Promotions Based on Actual Impact
-
-Promotional and non-promotional orders showed very similar average order values.
-
-Future promotion analysis should consider:
-
-* Discount amount
-* Promotion cost
-* Additional orders generated
-* New customers acquired
-* Customer retention
-* Incremental revenue
-
-### Improve Customer Experience
-
-Higher-rated records showed higher customer satisfaction.
-
-Customer experience should continue to be monitored along with other factors such as pricing, restaurant quality, delivery experience, cuisine, and location.
-
-### Use Targeted Weekend Campaigns
-
-Since weekdays contribute the majority of business volume, weekends can be used for targeted campaigns and offers to increase weekend demand.
-
-### Use Festivals as Targeted Opportunities
-
-Festival periods contribute a smaller share of total business volume.
-
-Specific festivals can be used for targeted campaigns, with their incremental impact measured separately.
+Festival periods made up a relatively small part of the overall business in this dataset.
 
 ---
 
-## Project Limitations
+## What I Would Recommend
 
-There are some limitations to this analysis based on the available data.
+Based on what I found, I would focus on a few areas.
 
-### Promotion ROI
+**1. Look at cities differently**
 
-Promotion and discount cost information was not available, so true promotion ROI could not be calculated.
+Mumbai is strong in sales, while Bangalore is strong in order volume. So I wouldn't use exactly the same strategy for every city.
 
-### Profitability
+**2. Keep monitoring delivery performance**
 
-Net Sales was calculated as:
+Delivery performance was close to the expected time in the data. Maintaining that as order volume grows would be important.
 
-**Sales − Commission**
+**3. Measure promotions properly**
 
-Therefore, Net Sales should not be treated as final company profit because other operating costs were not available.
+The average order values were almost the same for promo and non-promo orders. To understand whether promotions are actually worth the money, I would want to see discount cost, promotion cost, new customers, repeat orders, and incremental revenue.
 
-### Customer-Level Analysis
+**4. Look for ways to increase weekend demand**
 
-The dataset does not contain enough customer-level information to perform detailed customer retention, churn, or customer lifetime value analysis.
+Weekdays contribute most of the business. That makes weekends an area where targeted campaigns could be tested.
 
-### Causation
+**5. Use festivals selectively**
 
-The analysis identifies patterns and relationships in the data.
+Festival periods are a smaller part of the overall business, so I would measure individual festival campaigns instead of assuming every festival campaign will work.
 
-It does not prove that one factor directly caused a change in another factor.
+---
 
-### Peak Hour Analysis
+## Limitations I Found
 
-The `Is_Peak_Hour` field contained only **0** values in the available data, so a meaningful peak-hour versus non-peak-hour comparison could not be performed.
+There were also some things I could not properly answer with this dataset.
+
+* I couldn't calculate actual promotion ROI because promotion and discount costs were not available.
+* Net Sales is not the same as profit because other operating expenses were not included.
+* There wasn't enough customer-level information to analyze customer retention, churn, or lifetime value.
+* The analysis shows patterns in the data, but it does not prove that one factor caused another.
+* `Is_Peak_Hour` contained only `0`, so I couldn't compare peak and non-peak hours properly.
+
+I think mentioning these limitations is important because it shows what the data can and cannot actually tell us.
 
 ---
 
@@ -354,55 +290,54 @@ Food-Delivery-Platform-Performance-Analysis/
 └── README.md
 ```
 
-### Folder Purpose
+### Folders
 
-**Data** — Dataset and data-related files
+**Data** — Raw dataset and data-related files
 
-**Analysis** — Completed Excel analysis workbook and analysis outputs
+**Analysis** — Excel workbook containing the analysis
 
 **Documentation** — Detailed project documentation
 
-**Screenshots** — Screenshots of important analysis and dashboard work
+**Screenshots** — Screenshots from the analysis and dashboard
 
 **Dashboard** — Final dashboard output
 
 ---
 
-## What This Project Demonstrates
+## What I Practiced Through This Project
 
-This project demonstrates practical skills in:
+This project gave me practical experience with:
 
-* Data Cleaning and Validation
-* Data Quality Checking
+* Excel
 * Power Query
-* Excel Formulas
+* Data cleaning
+* Data quality checks
 * PivotTables
 * PivotCharts
-* KPI Analysis
-* Year-over-Year Analysis
-* Trend Analysis
-* Business Performance Analysis
-* Data Visualization
-* Dashboard Development
-* Business Insights
-* Data-Driven Recommendations
+* Calculations
+* KPI analysis
+* Year-over-year comparison
+* Business analysis
+* Dashboard creation
+* Finding insights from data
+* Turning findings into recommendations
 
-More importantly, the project focuses on understanding **what the numbers mean for the business**, rather than only calculating metrics.
+The biggest thing I learned was that analysis is not just about getting a number. The important part is understanding **what the number means and whether it is actually useful for the business.**
 
 ---
 
 ## Conclusion
 
-This project helped transform raw food delivery data into a structured business analysis.
+This project started with a large raw dataset and ended with a structured Excel analysis and dashboard.
 
-The analysis showed positive year-over-year growth, differences in city-level performance, stable delivery timing, similar average order values between promotional and non-promotional orders, differences in customer satisfaction, and different demand patterns across weekdays, weekends, and festivals.
+The analysis showed positive growth from 2024 to 2025, different performance across cities, relatively stable delivery timing, very similar average order values between promotional and non-promotional orders, and different demand patterns between weekdays, weekends, and festivals.
 
-The final dashboard provides a quick view of the main business KPIs and trends, while the insights and recommendations highlight areas that can be investigated further.
+There are also areas where the available data wasn't enough to give a complete answer, especially promotion ROI and profitability.
 
-**Overall workflow:**
+Overall, this project helped me practice the complete process:
 
-**Data → Data Quality → Analysis → Visualization → Insights → Recommendations**
+**Raw Data → Data Quality → Analysis → Dashboard → Findings → Recommendations**
 
 ---
 
-
+**Project:** Food Delivery Platform Performance Analysis
