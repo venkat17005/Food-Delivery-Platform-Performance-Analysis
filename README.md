@@ -405,8 +405,4 @@ The final dashboard provides a quick view of the main business KPIs and trends, 
 
 ---
 
-## Author
 
-**Venkat P.**
-
-**Project:** Food Delivery Platform Performance Analysis
